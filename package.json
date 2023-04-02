@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
-    "build-all": "npm run build; cd backend; cargo build --release"
+    "build-all": "bash ./build.sh"
   },
   "dependencies": {
     "element-plus": "^2.3.1",
