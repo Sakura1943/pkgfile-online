@@ -31,3 +31,5 @@ coverage
 
 /backend/target
 /backend/Cargo.lock
+
+/bin/
