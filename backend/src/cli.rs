@@ -5,7 +5,7 @@ use clap::{Parser, CommandFactory, Command};
 pub struct Cli {
     #[arg(short, long, default_value_t = 3000)]
     pub port: u16,
-    #[arg(short = 's', long, default_value = "0.0.0.0")]
+    #[arg(short = 's', long, default_value = "127.0.0.1")]
     pub host: String
 }
 
