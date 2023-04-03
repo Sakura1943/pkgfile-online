@@ -1,16 +1,16 @@
 // /api
 use super::{search::search, utils::Message};
-use poem::{get, handler, http::StatusCode, web::Json, IntoResponse, Route};
+use poem::{get, handler, http::StatusCode, web::Json, Route};
 
 #[handler]
-fn index() -> impl IntoResponse {
+fn index() -> Json<Message> {
     let mut message = Message::default();
     message
         .with_message("Search package information with files those include in package")
         .with_status(StatusCode::OK)
         .insert_usage("{protocol}://{host}:{port(default: 80/443)}/api/search?f=pacman")
         .with_demo();
-    Json(message).with_status(StatusCode::OK).into_response()
+    Json(message)
 }
 
 pub fn api() -> Route {

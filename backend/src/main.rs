@@ -6,9 +6,7 @@ async fn main() -> Result<()> {
     std::env::set_var("RUST_LOG", "poem=debug");
     tracing_subscriber::fmt::init();
 
-    let cli = Cli::default();
-    let host = cli.host;
-    let port = cli.port;
+    let Cli {host, port} = Cli::default();
 
     // Running server
     run(port, &host).await?;

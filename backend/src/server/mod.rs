@@ -36,20 +36,20 @@ pub async fn run(port: u16, host: &str) -> std::result::Result<(), std::io::Erro
 
 // Home page
 #[handler]
-fn index() -> impl IntoResponse {
+fn index() -> Json<utils::Message>{
     let mut message = utils::Message::default();
     message
         .with_message("An api to request arch linux package information with file name")
         .with_status(StatusCode::OK)
         .insert_usage("{protocol}://{host}:{port(default: 80/443)}/api/search?f=pacman")
         .with_demo();
-    Json(message).with_status(StatusCode::OK).into_response()
+    Json(message)
 }
 
 // Confirm server is active and runnning
 #[handler]
-fn ping() -> impl IntoResponse {
+fn ping() -> Json<utils::Message> {
     let mut message = utils::Message::default();
     message.with_status(StatusCode::OK).with_message("pong!");
-    Json(message).with_status(StatusCode::OK).into_response()
+    Json(message)
 }
