@@ -9,10 +9,10 @@ npm run build-all
 ## Running 
 ```shell
 #eg: Use simple_server or else like python -m http.server
-cd dist
+cd bin/page
 simple_server -p 8000 &
-cd ../backend/target/release/
-./backend
+
+../server/backend
 ```
 
 ## License
